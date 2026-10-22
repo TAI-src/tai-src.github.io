@@ -1,6 +1,7 @@
 from pathlib import Path
 import yaml
 
+
 def glob(pattern, hide=None, page_path=None, current_page=None):
     """
     Generate links relative to the folder of the current page.
@@ -22,6 +23,7 @@ def glob(pattern, hide=None, page_path=None, current_page=None):
         # Determine title
         title = f.stem.replace("_", " ").title()
         authors = ""
+        category = ""
 
         # Read YAML front-matter title if available
         try:
@@ -42,20 +44,23 @@ def glob(pattern, hide=None, page_path=None, current_page=None):
                         if isinstance(data, dict):
                             title = data.get("title", title)
                             authors = ", ".join(data.get("authors", []))
+                            category = data.get("category", "")
         except Exception:
             pass
-        
+
         # relative to the page folder
         rel_url = f.relative_to(base / page_folder).as_posix()
-        pages.append({
-            "title": title,
-            "url": rel_url,
-            "authors": authors
-        })
-        
+        pages.append(
+            {
+                "title": title,
+                "url": rel_url,
+                "authors": authors,
+                "category": category,
+            }
+        )
 
     return pages
 
+
 def define_env(env):
     env.macro(glob)
-
