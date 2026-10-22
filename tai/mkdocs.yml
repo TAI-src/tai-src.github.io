@@ -1,10 +1,10 @@
 site_name: Tailored AI
-site_url: https://tai-src.github.io/tai/
+site_url: https://tai-src.github.io
 theme:
   name: mkdocs
 # Custom variables
 extra:
-  github_repo: https://github.com/TAI-src/.github
+  github_repo: https://github.com/TAI-src/tai-src.github.io
   page_path: tai/docs
 markdown_extensions:
   - sane_lists
