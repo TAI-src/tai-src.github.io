@@ -22,4 +22,5 @@ This is a list of current and past projects related to the TAI initiative. Each 
 {% for p in glob("projects/*.md", hide=["project_template.md", "index.md"], page_path=page.file.src_path) %}
 
 - <a href="{{ p.url }}" style="color: {{ colors.get(p.category, '#000000') }};">{{ p.title }}</a> ({{ p.authors }})
+
 {% endfor %}
