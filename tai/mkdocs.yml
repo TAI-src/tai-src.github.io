@@ -56,8 +56,10 @@ theme:
         name: Switch to system preference
 # Custom variables
 extra:
-  github_repo: https://github.com/TAI-src/tai-src.github.io
   page_path: tai/docs
+  featured_authors:
+    - vvolz
+    - kvdb
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/TAI-src
@@ -101,15 +103,38 @@ plugins:
   - privacy
   - search
   - offline
-  - macros:
-      module_name: main
-  - exclude:
-      glob:
-        - "projects/project_template.md"
+  - tags
+  - blog:
+      blog_dir: projects
+      blog_toc: true
+      post_dir: "{blog}/posts"
+      post_date_format: yyyy/MM
+      post_url_date_format: yyyy/MM
+      post_url_format: "{slug}"
+      post_excerpt: required
+      post_excerpt_max_authors: 0
+      post_excerpt_separator: <!-- more -->
+      post_readtime: false
+      archive: true
+      archive_name: Archive
+      categories: true
+      categories_name: Research Themes
+      authors: true
+      authors_file: "{blog}/.authors.yml"
+      authors_profiles: true
+      authors_profiles_name: Team
+      pagination: true
+      pagination_per_page: 5
+      draft: false
+      draft_on_serve: true
+      draft_if_future_date: false
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/extra.css
 nav:
   - Home: index.md
-  - Projects: projects/index.md
+  - Projects:
+    - projects/index.md
   - About: about.md

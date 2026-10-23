@@ -1,0 +1,13 @@
+authors:
+  vv:
+    name: Vanessa Volz        # Author name
+    description: Centrum Wiskunde & Informatica, NL # Author affiliation
+    avatar: https://www.cwi.nl/intranet/faces/3797.jpg         # Author avatar
+    slug: vvolz          # Author profile slug
+    url: https://www.cwi.nl/en/people/vanessa-volz/            # Author website URL
+  kvdb:
+    name: Koen van der Blom
+    description: Centrum Wiskunde & Informatica, NL
+    avatar: https://www.cwi.nl/intranet/faces/3934.jpg
+    slug: kvdb
+    url: https://www.cwi.nl/en/people/koen-van-der-blom/
