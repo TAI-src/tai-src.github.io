@@ -50,6 +50,10 @@ def glob(pattern, hide=None, page_path=None, current_page=None):
 
         # relative to the page folder
         rel_url = f.relative_to(base / page_folder).as_posix()
+        # remove the .md part
+        if rel_url.endswith(".md"):
+            rel_url = rel_url.replace(".md", ".html")
+
         pages.append(
             {
                 "title": title,
