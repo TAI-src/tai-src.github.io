@@ -106,6 +106,9 @@ plugins:
   - exclude:
       glob:
         - "projects/project_template.md"
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 nav:
   - Home: index.md
   - Projects: projects/index.md
