@@ -1,0 +1,35 @@
+# About TAI: Tailored AI
+
+## Motivation
+
+Despite decades of research in black-box optimisation, some degree of domain knowledge is available for most real-world optimisation problems. In many cases, at least a manual solution or experience from previous optimisation attempts exists. My overarching research question is therefore: **How can domain knowledge be identified and exploited by systematically specialising black-box optimisers?** The idea is to explicitly sacrifice unnecessary generality in favour of an optimiser that performs particularly well on the problems we are interested in.
+
+This is a challenge that is frequently encountered in industry. In my own experience, it was incredibly frustrating to implement a solution for a seemingly well-studied problem, such as a reinforcement-learning agent for a car-racing mobile game, and still obtain unsatisfactory performance because of seemingly incidental details, such as the sprites used in the game. The solution turned out to be to restrict the input to the minimap. Experiences like this convinced me that we need better ways of incorporating domain knowledge into existing optimisation algorithms, for example by choosing a more suitable problem representation, as we did in the car-racing project.
+
+The idea of specialising, or tailoring, optimisers is not new, and evolutionary algorithms are particularly well suited to this purpose: they rely on relatively few assumptions and are comparatively easy to adapt. For example, specialised variation operators have been proposed for many application domains. **What is still missing, however, is a systematic overview of existing approaches and a framework for understanding when different forms of specialisation are useful.** Publications on application-specific modifications typically focus on individual settings and are often scattered across interdisciplinary outlets. As a result, it remains difficult to identify existing approaches, compare them, and derive practical guidelines for tailoring an optimiser to a new problem.
+
+Our long-term goal is to complement manual tailoring of black-box optimisers with a more systematic approach in which relevant problem characteristics are identified and exploited automatically. This requires understanding which structural properties influence algorithm behaviour, determining which information can be transferred between related instances, and developing mechanisms for incorporating this information into the optimisation process. **Ultimately, I aim to develop methods for constructing bespoke, predictable grey-box optimisers that exploit relevant problem characteristics, with and without explicit manual intervention.**
+
+## Research Themes
+
+In the near-term, we are pursuing three complementary research themes in order to work on the overarching question of how to systematically specialise black-box optimisers. For a list of concrete projects, see the [Project Index](projects/index.md).
+
+### Example Collection and Analysis
+
+In order to work towards a more systematic approach to specialisation, we are collecting examples of successful and unsuccessful tailoring from three main sources:
+
+- Existing literature: We are collecting information about existing approaches to specialisation in order to create a searchable knowledge base.
+- Expert experience: We are collecting rules-of-thumbs and anecdotes from colleagues in academia and industry in order to identify common pitfalls and successful strategies for tailoring black-box optimisers.
+- Concrete application examples: We are investigating concrete optimisation problems where specialisation can make a substantial difference, in order to add new specialisation approaches to our knowledge base and build our own expertise.
+
+These project are exploratory in nature and intended to build the foundation for formulating practical tailoring guidelines in the future in a bottom-up approach. A short-term goal is to **identify exploitable patterns across domains, and how they can be incorporated into an optimiser**.
+
+### Recurring problems
+
+Beyond the broader question of general tailoring guidelines, we are also explicitly investigating scenarios with recurring problems. Many real-world optimisation problems arise not as isolated instances but as streams of related instances. Medical treatment plans need to be optimised for different patients with the same condition. Logistics companies need to plan routes on different days using the same vehicles. Production processes for the same product need to be adjusted to changing demands. Such instances share characteristics that may be exploited to specialise an optimiser to the problem at hand. This scenario is thus an example of a generally relevant exploitable pattern encountered across domains.
+
+**Importantly, these commonalities need not be explicitly specified to be useful.** Rather than requiring a human to identify and encode all relevant similarities in advance, we are interested in learning which characteristics can be transferred between instances and how they can be exploited automatically. We are currently investigating which types of information can be transferred under different assumptions about the relationships between instances. Examples include the types of constraints they contain and the shape of their Pareto fronts. In this context, we are studying algorithm selection, warm-starting mechanisms, and preferences in parent selection. The central challenge is to identify the right level of abstraction: assumptions that are too restrictive limit applicability, while assumptions that are too general may fail to provide useful guidance for specialisation.
+
+### Benchmarking suites and methodology
+
+Benchmarking is crucial for identifying exploitable patterns in optimisation problems. Understanding which structural properties influence algorithm behaviour is not only important for benchmarking; it can also help determine which characteristics should be used to specialise an optimiser. Conversely, studying how an optimiser responds to different problem structures can help assess whether a proposed specialisation is genuinely useful. Ultimately, I want to develop a better understanding of the relationship between problem structure, algorithm behaviour, and optimisation performance, providing a more **systematic basis for deciding when and how black-box optimisers should be tailored**.

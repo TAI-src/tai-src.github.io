@@ -17,4 +17,10 @@ plugins:
   - search
   - macros:
       module_name: main
-
+  - exclude:
+      glob:
+        - "projects/project_template.md"
+nav:
+  - Home: index.md
+  - Projects: projects/index.md
+  - About: about.md
