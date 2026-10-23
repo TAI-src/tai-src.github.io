@@ -14,3 +14,19 @@ First, an action runs that builds the mkdocs and puts the static files that resu
 [![pages-build-deployment](https://github.com/TAI-src/tai-src.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/TAI-src/tai-src.github.io/actions/workflows/pages/pages-build-deployment)
 
 Afterwards, the default GH Pages action (set up in repository setting) deploys the static files from that branch.
+
+### Development
+
+First make sure that all required packages are installed.
+```
+cd tai
+pip install -r requirements.txt
+```
+(or load the corresponding environment)
+
+Then serve locally to test (from [tai folder](tai/))
+```
+mkdocs serve
+```
+
+
